@@ -1,0 +1,64 @@
+
+
+first time using new AM .
+   - during first start of program -- in verification check (0,1,2,3) --> choose 3 (new cert) -- then verify
+   - thereafter : proceed as wish
+
+
+Functions of Auth Manager API:
+
+1.  getUpdatedTime()
+
+    (a) use: it updates node's time as part of uniformity among all nodes in the network and
+        to ensure user doesn't forge the dates in the digital certificates and in other services.
+    (b) parameter: nil
+    (c) returns: node's updated time in String format (DD-MM-YYYY HH:MM)
+
+2.  getClientCert()
+
+     (a) use: it gets the node's digital certificate so that other services can use it.
+     (b) parameter: nil
+     (c) returns: node's digital certificate in X509Certificate format
+
+3.  getClientPubKey()
+
+    (a) use: it gets the node's PublicKey so that other services can use it.
+    (b) parameter: nil
+    (c) returns: node's Public Key in PublicKey format
+
+4.  getServerCert()   ??? do we need to add this functionality ???
+
+5.  getAuthVerifyFlag()
+
+        (a) use: it checks the validity of user's certificates. only when true: other services will start
+        (b) parameter: nil
+        (c) returns: true or false: end/ prompt user for new/restore/exit
+
+
+// **** class prepared **** API functionality to be added **** //
+
+6.  encryptData(String data_to_be_encrypted, PublicKey other_user_public_key)
+
+        (a) use: it encrypts and encode the data passed to it, with the public_key given to him
+        (b) parameter: data_to_be_encrypted, other_user_public_key
+        (c) returns: encode_encrypted_data in String format
+
+7.  decryptData (String received_encryptedData)
+        (a) use: it decodes and decrypt the data passed to it using its own private key
+        (b) parameter: received_encryptedData
+        (c) returns: plain data in String format
+
+
+// **** under progress **** //
+
+8.  hashing functions
+9.  Digitally Signed data
+10. Verification of Digitally Signed Data
+
+
+11. one-many encryption
+    encryptData(String data_to_be_encrypted, PrivateKey own_private_key)
+    decryptData (String received_encryptedData, PublicKey pub_key_of_send)
+
+
+

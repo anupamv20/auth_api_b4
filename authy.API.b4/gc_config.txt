@@ -1,0 +1,2 @@
+max_limit_of_skip_flags=32
+max_limit_of_buffer=1024
